@@ -1,0 +1,11 @@
+/.vs/Logger/v14/.suo
+/Logger.Net/bin
+/Logger.Net/log
+/Logger.Net/obj/Debug
+/LoggerConsole/bin/Debug
+/*.suo
+/LoggerConsole/obj/Debug
+/bin/Debug
+/obj/Debug
+/packages/MiniProfiler.2.0.2
+/packages/MiniProfilerWebformsEnabler.1.0.5

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger.csproj", "{5437858A-A938-44FA-B3E3-A377CE833417}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerConsole", "LoggerConsole\LoggerConsole.csproj", "{3ADC8CD8-1D8E-4309-9E57-67388A95DA8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger.Net", "Logger.Net\Logger.Net.csproj", "{B93E54CF-BA9C-464E-A1AA-566F86F67F65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5437858A-A938-44FA-B3E3-A377CE833417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5437858A-A938-44FA-B3E3-A377CE833417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5437858A-A938-44FA-B3E3-A377CE833417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5437858A-A938-44FA-B3E3-A377CE833417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ADC8CD8-1D8E-4309-9E57-67388A95DA8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ADC8CD8-1D8E-4309-9E57-67388A95DA8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ADC8CD8-1D8E-4309-9E57-67388A95DA8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ADC8CD8-1D8E-4309-9E57-67388A95DA8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93E54CF-BA9C-464E-A1AA-566F86F67F65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93E54CF-BA9C-464E-A1AA-566F86F67F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93E54CF-BA9C-464E-A1AA-566F86F67F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93E54CF-BA9C-464E-A1AA-566F86F67F65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

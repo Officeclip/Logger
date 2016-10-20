@@ -1,0 +1,14 @@
+﻿9/28
+Done - Add fractional time to the log.xml so that we know the exact time when it is written
+Find out why the log is writing so slow...for officeclip installation
+
+9/27
+Done - 1. Do not create new files if not required
+---
+
+1. Make providers for output
+Done - 2. Make the write method threadsafe. http://stackoverflow.com/questions/9848067/what-makes-a-method-thread-safe-what-are-the-rules
+3. Add exception separately
+
+Done - 4. Put a limit on stacktrace levels - It takes too much log space
+

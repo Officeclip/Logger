@@ -1,0 +1,64 @@
+﻿<?xml version="1.0"?>
+<logConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- Loggers show up as categoies of the log -->
+  <loggers>
+    <logger>
+      <!-- The name of the category that will show up on the log file -->
+      <name>Category-1</name>
+      <!-- description is currently used just as comment, it does not show in the log file -->
+      <description>The first category of the log</description>
+      <!-- Logs of level equal to or less than this will be shown, levels are: DEBUG = 5,
+      INFO = 4, WARNING = 3, ERROR = 2, FATAL = 1 -->
+      <level>3</level>
+    </logger>
+    <logger>
+      <name>Category-2</name>
+      <description>The second category of the log</description>
+      <level>5</level>
+    </logger>
+  </loggers>
+  <fileLogSource>
+    <!-- The folder where logs will be stored, should be absolute path. By default logs will be 
+    stored in the log folder relative to the executable -->
+    <folder></folder>
+    <!-- The log stylesheet overriding the default. Path is relative to the executable. See xslt folder -->
+    <logXslt></logXslt>
+    <!-- The index stylesheet overriding the default. Path is relative to the executable. See xslt folder -->
+    <indexXslt></indexXslt>
+    <!-- Number of days after which log files will split. This is done to keep the logfile size manageable. Default is 1 -->
+    <currentLogDayLimit>1</currentLogDayLimit>
+    <!-- File size after which log files will split. This is done to keep the logfile size manageable. Default is 100 -->
+    <currentLogSizeLimitKb>100</currentLogSizeLimitKb>
+    <!-- Shows statistics in the index file. This allows user to see if there are any errors or warning in the log file
+    before seeing the details. NOTE: This will show down log creation process. Default is 0 (off)-->
+    <showStatistics>0</showStatistics>
+    <!-- supress the log, default is 0 means log will be shown-->
+    <supress>0</supress>
+  </fileLogSource>
+  <databaseLogSource>
+    <!-- not implemented yet -->
+    <connectionString>Server=;Database=;User ID=;Password=;Trusted_Connection=False</connectionString> 
+    <tableName>errors</tableName>
+    <dateTimeField>logDate</dateTimeField>
+    <categoryField>logname</categoryField>
+    <logStateField>logstate</logStateField>
+    <stackInfoField>stackinfo</stackInfoField>
+    <topicField>topic</topicField>
+    <descriptionField>description</descriptionField>
+    <userField>username</userField>
+    <customField>custom</customField>
+    <supress>1</supress>
+  </databaseLogSource>
+  <eventLogSource>
+    <!-- not implemented yet -->
+    <source>OfficeClip</source>
+    <suppress>1</suppress>
+  </eventLogSource>
+  <!-- number of days after which the log entries will be purged, default is 7 -->
+  <purgeDays>2</purgeDays>
+  <!-- Add a part of the class name that will only be included in the stack trace, if empty, full stack is shown-->
+  <stackLineMatchPattern>OfficeClip</stackLineMatchPattern>
+  <stackLineRejectPattern></stackLineRejectPattern>
+  <!-- attributes for future changes, currently not used -->
+  <attributes>msbuild</attributes>
+</logConfig>
