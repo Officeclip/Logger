@@ -183,11 +183,6 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
-/Logger/Logger.Net/log
-/HtmlAgilityPack/1_4_0/.vs/config/applicationhost.config
-/Logger/.vs/config/applicationhost.config
-/OAuth2/.vs/config
-/OAuth2/OAuth2.Example/oAuth2Settings.config
-/GoogleApis/.vs
-/GoogleApis/packages
 /Logger.Net/log
+/.vs/config/applicationhost.config
+
