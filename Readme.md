@@ -38,6 +38,6 @@ security)
 Note:
 
 * File Log outputs html with xsl stylesheet. Because of security some browsers may not
-be able to render the file properly. An open source mini webserver devx is included. Double
+be able to render the file properly. An open source mini webserver [devd](https://github.com/cortesi/devd) is included. Double
 click on ViewLog to see the logs on the browser. If it does not show up on the browser try
 http://localhost:8000 to see your logs...
