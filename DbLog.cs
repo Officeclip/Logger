@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 
-namespace OpenNetTools.Logger
+namespace OfficeClip.OpenSource.Logger
 {
     public class DbLog : ILog
     {

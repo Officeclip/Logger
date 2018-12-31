@@ -7,8 +7,8 @@
     <ProjectGuid>{5437858A-A938-44FA-B3E3-A377CE833417}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpenNetTools.Logger</RootNamespace>
-    <AssemblyName>OpenNetTools.Logger</AssemblyName>
+    <RootNamespace>OfficeClip.OpenSource.Logger</RootNamespace>
+    <AssemblyName>OfficeClip.OpenSource.Logger</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resource\ViewLog.cmd" />
+    <None Include="Logger.nuspec" />
     <None Include="OfficeClipKey.snk" />
     <None Include="Readme.md" />
     <None Include="xslt\index0.xslt">
@@ -95,8 +96,7 @@
     </None>
     <EmbeddedResource Include="Resource\index.html" />
     <EmbeddedResource Include="Resource\devd.exe" />
-    <Content Include="test.html" />
-    <Content Include="todo.txt" />
+    <None Include="todo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

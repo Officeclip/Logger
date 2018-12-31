@@ -9,7 +9,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Reflection;
 
-namespace OpenNetTools.Logger
+namespace OfficeClip.OpenSource.Logger
 {
     public class FileLog : ILog
     {
@@ -281,7 +281,7 @@ namespace OpenNetTools.Logger
                 File.Delete(filePath);
             }
             var assembly = Assembly.GetExecutingAssembly();
-            string resourceName = "OpenNetTools.Logger.Resource." + fileName;
+            string resourceName = "OfficeClip.OpenSource.Logger.Resource." + fileName;
             using (var input = assembly.GetManifestResourceStream(resourceName))
             {
                 using (var output = File.Open(filePath, FileMode.CreateNew))
@@ -301,7 +301,7 @@ namespace OpenNetTools.Logger
         private string GetXmlEmbeddedResourceContent(string resourceFileName)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            string assemblyName = "OpenNetTools.Logger.Resource." + resourceFileName;
+            string assemblyName = "OfficeClip.OpenSource.Logger.Resource." + resourceFileName;
             using (Stream stream = assembly.GetManifestResourceStream(assemblyName))
             {
                 using (XmlTextReader reader = new XmlTextReader(stream))

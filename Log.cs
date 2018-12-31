@@ -8,7 +8,7 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Linq;
 
-namespace OpenNetTools.Logger
+namespace OfficeClip.OpenSource.Logger
 {
     public class Log
     {

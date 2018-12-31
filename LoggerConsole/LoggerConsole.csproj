@@ -7,8 +7,8 @@
     <ProjectGuid>{3ADC8CD8-1D8E-4309-9E57-67388A95DA8F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LoggerConsole</RootNamespace>
-    <AssemblyName>LoggerConsole</AssemblyName>
+    <RootNamespace>OfficeClip.OpenSource.LoggerConsole</RootNamespace>
+    <AssemblyName>OfficeClip.OpenSource.LoggerConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

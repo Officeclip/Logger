@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace OpenNetTools.Logger
+namespace OfficeClip.OpenSource.Logger
 {
     public enum LogState
     {

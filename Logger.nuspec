@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/Officeclip/Logger/blob/master/license.txt</licenseUrl>
+    <projectUrl>https://github.com/Officeclip/Logger</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Creates formatted log files so that they can be read easily</description>
+    <releaseNotes>This is the first released version via nuget.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>Log Logger</tags>
+  </metadata>
+  <files>
+    <file src="readme.md" target="" />
+    <file src="bin/$configuration$/$id$.pdb" target="lib/net451" />
+  </files>
+</package>
