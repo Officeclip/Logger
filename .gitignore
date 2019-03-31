@@ -186,3 +186,4 @@ FakesAssemblies/
 /Logger.Net/log
 /.vs/config/applicationhost.config
 
+/.vs/Logger/v15/Server/sqlite3
