@@ -187,3 +187,5 @@ FakesAssemblies/
 /.vs/config/applicationhost.config
 
 /.vs/Logger/v15/Server/sqlite3
+/.vs
+/Logger.Net/Logger.Net.csproj.user
