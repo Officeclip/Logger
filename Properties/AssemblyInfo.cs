@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 using System.Security;
 
-[assembly: AssemblyTitle("logXml")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("OfficeClip.OpenSource.Logger")]
+[assembly: AssemblyDescription("Creates formatted log files so that they can be read easily")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("logXml")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCompany("OfficeClip LLC")]
+[assembly: AssemblyProduct("OfficeClip.OpenSource.Logger")]
+[assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,7 +33,7 @@ using System.Security;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.5.0.0")]
-[assembly: AssemblyFileVersion("0.5.0.0")]
+[assembly: AssemblyVersion("0.5.2.0")]
+[assembly: AssemblyFileVersion("0.5.2.0")]
 
 [assembly: AllowPartiallyTrustedCallers()]

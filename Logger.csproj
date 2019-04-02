@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resource\ViewLog.cmd" />
+    <None Include="Logger.nuspec" />
     <None Include="OfficeClipKey.snk" />
     <None Include="Readme.md" />
     <None Include="xslt\index0.xslt">
