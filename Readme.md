@@ -26,14 +26,31 @@ and manipulating log files in a browser.
 
 How to use:
 
-* Copy the logger.xml file to your folder and make changes as needed
+* Copy the logger.xml file to the root of your project and mark the file as 
+Copy to Output Directory in the Properties window
 
-* After running, open the index.xml file directly on a latest browser 
-(Chrome, and Firefox works, IE Edge currently does not work because of
-security)
+* When file program runs, it will automatically create a log folder in the 
+project output.
 
-* Or create a web application pointing to the log folder and run index.xml 
-(IE browser works here)
+* Double Click on the ViewLog.cmd file to see the logs in a browser window
+
+```
+		static Log log = null;
+        private static LogConfig GetLogConfig()
+        {
+            string path = LogConstants.GetSetupDir() + @"\logger.xml";
+            return LogConstants.DeserializeLogConfig(path);
+        }
+
+        public static void Main()
+        {
+            log = new Log(GetLogConfig())
+            {
+                DefaultCategory = "category", // Name should match the category in xml fil
+                DefaultUser = "email1@email.com"
+            };
+		}
+```
 
 Note:
 

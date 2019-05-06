@@ -4,7 +4,7 @@
   <loggers>
     <logger>
       <!-- The name of the category that will show up on the log file -->
-      <name>category-1</name>
+      <name>category</name>
       <!-- description is currently used just as comment, it does not show in the log file -->
       <description>The first category of the log</description>
       <!-- Logs of level equal to or less than this will be shown, levels are: DEBUG = 5,
@@ -12,7 +12,7 @@
       <level>3</level>
     </logger>
     <logger>
-      <name>category-2</name>
+      <name>category-1</name>
       <description>The second category of the log</description>
       <level>5</level>
     </logger>

@@ -96,6 +96,7 @@
     </None>
     <EmbeddedResource Include="Resource\index.html" />
     <EmbeddedResource Include="Resource\devd.exe" />
+    <Content Include="nuget.help.txt" />
     <Content Include="test.html" />
     <Content Include="todo.txt" />
   </ItemGroup>
