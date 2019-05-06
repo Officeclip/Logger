@@ -2,7 +2,7 @@
 using System.Data;
 using System.Text;
 
-namespace OpenNetTools.Logger
+namespace OfficeClip.OpenSource
 {
     /// <summary>
     /// From: http://stackoverflow.com/a/19683749

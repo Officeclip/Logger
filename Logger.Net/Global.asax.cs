@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web;
-using OpenNetTools.Logger;
+using OfficeClip.OpenSource.Logger;
 using StackExchange.Profiling;
 
 namespace Logger.Net

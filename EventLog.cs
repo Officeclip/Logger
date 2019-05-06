@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OpenNetTools.Logger
+namespace OfficeClip.OpenSource.Logger
 {
     public class EventLog : ILog
     {
