@@ -191,6 +191,7 @@ namespace OfficeClip.OpenSource.Logger
                 state,
                 topic,
                 description,
+                null,
                 user,
                 category,
                 custom);
@@ -198,7 +199,7 @@ namespace OfficeClip.OpenSource.Logger
 
         public void WriteProperty(string propertyName, string propertyDescription, string user = "", string category = "", string custom = "")
         {
-            Write(LogState.Property, propertyName, propertyDescription, user, category, custom);
+            Write(LogState.Property, propertyName, propertyDescription, null, user, category, custom);
         }
 
         public void WriteFunction(
@@ -212,7 +213,7 @@ namespace OfficeClip.OpenSource.Logger
             string custom = "")
         {
             string desc = $"({arg1}, {arg2}, {arg3}, {argRest})";
-            Write(LogState.Function, functionName, desc, user, category, custom);
+            Write(LogState.Function, functionName, desc, null, user, category, custom);
         }
 
         public void WriteMethod(
@@ -244,6 +245,7 @@ namespace OfficeClip.OpenSource.Logger
                 LogState.Method,
                 $"{callingMethod.ReflectedType.Name}:{callingMethod.Name}",
                 output,
+                null,
                 user,
                 category,
                 custom);
@@ -251,25 +253,24 @@ namespace OfficeClip.OpenSource.Logger
 
         public void WriteEvent(string title, string description, string user = "", string category = "", string custom = "")
         {
-            Write(LogState.Event, title, description, user, category, custom);
+            Write(LogState.Event, title, description, null, user, category, custom);
         }
 
         public void WriteInfo(string title, string description, string user = "", string category = "", string custom = "")
         {
-            Write(LogState.Info, title, description, user, category, custom);
+            Write(LogState.Info, title, description, null, user, category, custom);
         }
 
-        private List<string> StackInfo(LogState logState)
+        private List<string> StackInfo(LogState logState, Exception exception)
         {
-            List<string> stackLines = new List<string>();
+            var stackLines = new List<string>();
             if (
                 (logState != LogState.Error) && (logState != LogState.FatalError) && (logState != LogState.Debug))
             {
                 return stackLines;
             }
-            StackTrace callStack = new StackTrace(
-                1,
-                true);
+
+            var callStack = GetCallStack(exception);
 
             using (StringReader reader = new StringReader(callStack.ToString()))
             {
@@ -293,6 +294,24 @@ namespace OfficeClip.OpenSource.Logger
             return stackLines;
         }
 
+        private static StackTrace GetCallStack(Exception exception)
+        {
+            StackTrace callStack;
+            if (exception != null)
+            {
+                while (exception.InnerException != null) exception = exception.InnerException;
+                callStack = new StackTrace(exception, true);
+            }
+            else
+            {
+                callStack = new StackTrace(
+                    0,
+                    true);
+            }
+
+            return callStack;
+        }
+
         private bool IsFilterPresentInLine(
             string line, string filterName)
         {
@@ -312,12 +331,19 @@ namespace OfficeClip.OpenSource.Logger
             return false;
         }
 
-        public void WriteDebug(string title, string description, string user = "", string category = "", string custom = "")
+        public void WriteDebug(
+            string title, 
+            string description, 
+            Exception exception = null,
+            string user = "", 
+            string category = "", 
+            string custom = "")
         {
             Write(
                 LogState.Debug,
                 title,
                 description,
+                exception,
                 user,
                 category,
                 custom);
@@ -326,6 +352,7 @@ namespace OfficeClip.OpenSource.Logger
         public void WriteError(
             string title,
             string description,
+            Exception exception = null,
             string user = "",
             string category = "",
             string custom = "")
@@ -334,35 +361,79 @@ namespace OfficeClip.OpenSource.Logger
                 LogState.Error,
                 title,
                 description,
+                exception,
                 user,
                 category,
                 custom);
         }
 
-        public void WriteFatalError(string title, string description, string user = "", string category = "", string custom = "")
+        public void WriteFatalError(
+            string title, 
+            string description,
+            Exception exception = null,
+            string user = "", 
+            string category = "", 
+            string custom = "")
         {
             Write(
                 LogState.FatalError,
                 title,
                 description,
+                exception,
                 user,
                 category,
                 custom);
         }
 
-        public void WriteWarning(string title, string description, string user = "", string category = "", string custom = "")
+        public void WriteWarning(
+            string title, 
+            string description,
+            Exception exception = null,
+            string user = "", 
+            string category = "", 
+            string custom = "")
         {
-            Write(LogState.Warning, title, description, user, category, custom);
+            Write(
+                LogState.Warning, 
+                title, 
+                description, 
+                exception, 
+                user, 
+                category, 
+                custom);
         }
 
-        public void WritePass(string title, string description, string user = "", string category = "", string custom = "")
+        public void WritePass(
+            string title, 
+            string description, 
+            string user = "", 
+            string category = "", 
+            string custom = "")
         {
-            Write(LogState.Pass, title, description, user, category, custom);
+            Write(
+                LogState.Pass, 
+                title, 
+                description, 
+                null, 
+                user, 
+                category, custom);
         }
 
-        public void WriteSubTitle(string title, string description, string user = "", string category = "", string custom = "")
+        public void WriteSubTitle(
+            string title, 
+            string description, 
+            string user = "", 
+            string category = "", 
+            string custom = "")
         {
-            Write(LogState.SubTitle, title, description, user, category, custom);
+            Write(
+                LogState.SubTitle, 
+                title, 
+                description, 
+                null, 
+                user, 
+                category, 
+                custom);
         }
 
         #endregion Write Methods
@@ -371,6 +442,7 @@ namespace OfficeClip.OpenSource.Logger
             LogState state,
             string topic,
             string description,
+            Exception exception = null,
             string user = "",
             string category = "",
             string custom = "")
@@ -398,7 +470,7 @@ namespace OfficeClip.OpenSource.Logger
                 {
                     FileLog.WriteLog(
                                      state,
-                                     StackInfo(state),
+                                     StackInfo(state, exception),
                                      topic,
                                      description,
                                      categoryValue,
@@ -410,7 +482,7 @@ namespace OfficeClip.OpenSource.Logger
             {
                 DbLog.WriteLog(
                                state,
-                               StackInfo(state),
+                               StackInfo(state, exception),
                                topic,
                                description,
                                user,
