@@ -194,6 +194,28 @@ th {
               .replace(/"/g, '&quot;')
               .replace(/'/g, '&#39;');
           }
+		  
+		  function htmlDecode(str) {
+			  if (str === null || str === undefined) return '';
+			  var txt = document.createElement('textarea');
+			  txt.innerHTML = String(str);
+			  return txt.value;
+			}
+
+			function formatDescription(str) {
+			  var decoded = htmlDecode(str);
+
+			  // Escape again so random HTML does not execute
+			  var safe = htmlEncode(decoded);
+
+			  // Turn literal <br>, <br/>, <br /> into actual HTML breaks
+			  safe = safe.replace(/&lt;br\s*\/?&gt;/gi, '<br />');
+
+			  // Also preserve normal newlines
+			  safe = safe.replace(/\r\n|\r|\n/g, '<br />');
+
+			  return safe;
+			}
 
           function getText(parent, tagName) {
             var nodes = parent.getElementsByTagName(tagName);
@@ -282,7 +304,7 @@ th {
               html += '<td>' + htmlEncode(t) + '</td>';
               html += '<td>';
 
-              html += htmlEncode(d).replace(/\r?\n/g, '<br />');
+              html += formatDescription(d);
 
               if (stackNodes.length > 0) {
                 html += '<div class="toggleLink" onclick="toggleStackTrace(\'' + stackId + '\', this)">Show Stack Trace</div>';
