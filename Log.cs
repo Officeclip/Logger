@@ -223,7 +223,7 @@ namespace OfficeClip.OpenSource.Logger
             params object[] args)
         {
             StringBuilder sb = new StringBuilder();
-            StackTrace callStack = new StackTrace(1, true);
+            StackTrace callStack = new StackTrace(0, true);
             StackFrame callingMethodFrame = callStack.GetFrame(1);
             MethodBase callingMethod = callingMethodFrame.GetMethod();
             sb.Append($"{callingMethodFrame.GetFileName()}:{callingMethodFrame.GetFileLineNumber()} ");
