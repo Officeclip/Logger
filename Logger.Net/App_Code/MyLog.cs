@@ -17,12 +17,12 @@
 
         public void WriteError(string title, string description)
         {
-            Global.Log.WriteError(title, description, user, category);
+            Global.Log.WriteError(title, description, null, user, category);
         }
 
         public void WriteWarning(string title, string description)
         {
-            Global.Log.WriteWarning(title, description, user, category);
+            Global.Log.WriteWarning(title, description, null, user, category);
         }
 
         public void WriteInfo(string title, string description)
